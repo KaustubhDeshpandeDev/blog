@@ -3,8 +3,10 @@ const users = require("./routes/api/users"); //#9 import the routes file
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser"); //this is required to store data in the database and transalte the data
 
-//#2 intialize the app with express
+//#2 intialize the app with express and body parser
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const db = require("./config/keys").mongoURI; //creating a variable with the MongoURI
 
