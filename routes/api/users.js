@@ -66,7 +66,8 @@ router.delete("/:id", async (req, res) => {
 //update or edit router
 router.put("/:id", async (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate({ _id: req.params.id });
+    const user = await User.findOneAndUpdate({ _id: req.params.id }, req.body);
+    res.json(user);
   } catch (e) {
     res.json({ Error: `Error is ${e}` });
   }

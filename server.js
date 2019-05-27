@@ -13,7 +13,7 @@ const db = require("./config/keys").mongoURI; //creating a variable with the Mon
 //connecting to database
 mongoose
   .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("Database connectd successfully"))
+  .then(() => console.log("Database connected doood"))
   .catch(err => console.log(err));
 
 //#5 now that our app is setup we can start working on our routes so define a routes file, once you do that you can use APP.USE and intialize that file. The url is gonna be /api/users
